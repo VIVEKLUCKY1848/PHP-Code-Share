@@ -871,6 +871,10 @@ find . -type f -follow -print > modfiles.list
 find . -not -path '*/\.*'
 find . -not -path '*/\.*' -type f -name '*some text*'
 find . -type d -path '*/\.*' -prune -o -not -name '.*' -type f -name '*some text*' -print
+find . -type f -maxdepth 1 | grep -v '~$' > filenames.txt
+find . -type f | grep -v '~$' > filenames.txt
+find . -type f -maxdepth 1 -not -name '*~' > filenames.txt
+find . -type f -not -name '*~' > filenames.txt
 
 Rename files in current and it's subdirectories
 find . -name "*.{extension}" | xargs rename -v "s/oldname/newname/"
@@ -885,3 +889,6 @@ find . -depth -type d -not -name '.' -exec rename -n 's/(.*)/$1_foo/' {} +
 find . -depth -type d -not -name '.' -exec rename 's/firmInfo/firmainfo/' {} +
 find . -depth -type d -not -name '.' -exec rename 's/oldname/newname/' {} +
 find . -depth -type d -not -name '.' -exec rename 's/(.*)/$1_foo/' {} +
+
+Find and delete all files which has '~' in their names as suffix
+find . -type f -name '*~' -delete
