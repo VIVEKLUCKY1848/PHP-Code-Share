@@ -1,4 +1,4 @@
-# Aliases and functions I have created so far in `~/.bashrc` file
+# Aliases I have created so far
 alias ll='ls -lhA'
 alias clrscr='cat /dev/null > ~/.bash_history && history -c && history -w && clear'
 alias resetscr='cat /dev/null > ~/.bash_history && history -c && history -w && clear'
