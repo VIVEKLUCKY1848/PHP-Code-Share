@@ -34,4 +34,10 @@ cleardemo() {
 	rm -rf /var/www/html/demo/var/debug/*
 	rm -rf /var/www/html/demo/var/log/*
 }
-## Compile this file as `source ~/.bashrc`
+
+clearlocal() {
+	rm -rf /var/www/html/$1/var/cache/*
+	rm -rf /var/www/html/$1/var/session/*
+	rm -rf /var/www/html/$1/var/debug/*
+	rm -rf /var/www/html/$1/var/log/*
+}
