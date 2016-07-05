@@ -123,7 +123,7 @@ alias ls='ls --color=auto'
 replinallfiles() {
 	find ./ -type f -readable -writable -exec sed -i "s/$1/$2/g" {} \;
 }
-alias replinfiles=replinallfiles
+# alias replinfiles=replinallfiles
 
 rendirs() {
 	find . -depth -type d -not -name '.' -exec rename "s/$1/$2/" {} + \;
@@ -142,4 +142,10 @@ deletebakfiles() {
 	find . -type f -name '*~' -delete
 }
 
+clearlocal() {
+	rm -rf /var/www/html/$1/var/cache/*
+	rm -rf /var/www/html/$1/var/session/*
+	rm -rf /var/www/html/$1/var/debug/*
+	rm -rf /var/www/html/$1/var/log/*
+}
 ## Compile this as `source ~/.bashrc`
