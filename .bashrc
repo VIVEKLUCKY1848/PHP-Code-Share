@@ -144,7 +144,8 @@ deletebakfiles() {
 
 clearlocal() {
 	rm -rf /var/www/html/$1/var/cache/*
-	rm -rf /var/www/html/$1/var/session/*
+	#rm -rf /var/www/html/$1/var/session/*
+	rm -R -f /var/www/html/$1/media/catalog/product/cache
 	rm -rf /var/www/html/$1/var/debug/*
 	rm -rf /var/www/html/$1/var/log/*
 }
